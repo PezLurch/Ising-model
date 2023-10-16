@@ -2,7 +2,7 @@ const w = window.innerWidth;
 const h = window.innerHeight;
 
 //Set canvas size: TO DO: Make this according to the window size... For now, 800 works well for me.
-let canvas_size = 800;
+let canvas_size = 600;
 
 // Create the canvas and add it to the page:
 var canvas_hull = document.createElement("div");
@@ -16,6 +16,8 @@ document.body.appendChild(canvas_hull);
 
 
 // Add the temperature slider and readout:
+var paragraph = document.createElement("p");
+paragraph.setAttribute("style", "text-align:center;");
 var temp_hull = document.createElement("div");
 temp_hull.setAttribute("style", "text-align:center;");
 temp_hull.innerHTML = "Temperature = ";
@@ -23,9 +25,13 @@ var tempReadout = document.createElement("span");
 tempReadout.setAttribute("id", "tempReadout");
 tempReadout.innerHTML = "2.27";
 temp_hull.appendChild(tempReadout);
+paragraph.appendChild(temp_hull);
+document.body.appendChild(paragraph);
 
 
-
+var paragraph = document.createElement("p");
+paragraph.setAttribute("style", "text-align:center;");
+var temp_hull = document.createElement("div");
 var tempSlider = document.createElement("input");
 tempSlider.setAttribute("id", "tempSlider");
 tempSlider.setAttribute("type", "range");
@@ -36,17 +42,23 @@ tempSlider.setAttribute("value", "2.27");
 tempSlider.setAttribute("oninput", "showTemp();");
 tempSlider.setAttribute("onchange", "showTemp();");
 tempSlider.setAttribute("style", "width:" + canvas_size + "px");
+temp_hull.appendChild(tempSlider);
+paragraph.appendChild(temp_hull);
+document.body.appendChild(paragraph);
 
+
+var paragraph = document.createElement("p");
+paragraph.setAttribute("style", "text-align:center;");
+var temp_hull = document.createElement("div");
 var startButton = document.createElement("input");
 startButton.setAttribute("id", "startButton");
 startButton.setAttribute("type", "button");
 startButton.setAttribute("onclick", "startStop()");
 startButton.setAttribute("value", "  Start  ");
 startButton.setAttribute("style", "font-size:large;");
-
-temp_hull.appendChild(tempSlider);
 temp_hull.appendChild(startButton);
-document.body.appendChild(temp_hull);
+paragraph.appendChild(temp_hull);
+document.body.appendChild(paragraph);
 
 
 
