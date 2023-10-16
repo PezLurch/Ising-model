@@ -34,6 +34,7 @@ paragraph.setAttribute("style", "text-align:center;");
 var temp_hull = document.createElement("div");
 var tempSlider = document.createElement("input");
 tempSlider.setAttribute("id", "tempSlider");
+tempSlider.setAttribute("class", "slider");
 tempSlider.setAttribute("type", "range");
 tempSlider.setAttribute("min", "0.01");
 tempSlider.setAttribute("max", "9.99");
